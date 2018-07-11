@@ -1,0 +1,52 @@
+<%= form_with(model: investment, local: true) do |form| %>
+  <% if investment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(investment.errors.count, "error") %> prohibited this investment from being saved:</h2>
+
+      <ul>
+      <% investment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :investment_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :broker_id %>
+    <%= form.text_field :broker_id, id: :investment_broker_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :applied_at %>
+    <%= form.datetime_select :applied_at, id: :investment_applied_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duration %>
+    <%= form.number_field :duration, id: :investment_duration %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rescue_at %>
+    <%= form.datetime_select :rescue_at, id: :investment_rescue_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :invested_amount %>
+    <%= form.text_field :invested_amount, id: :investment_invested_amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estimated_rescue %>
+    <%= form.text_field :estimated_rescue, id: :investment_estimated_rescue %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

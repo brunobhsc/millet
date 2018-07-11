@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @investment.description %>
+</p>
+
+<p>
+  <strong>Broker:</strong>
+  <%= @investment.broker %>
+</p>
+
+<p>
+  <strong>Applied at:</strong>
+  <%= @investment.applied_at %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @investment.duration %>
+</p>
+
+<p>
+  <strong>Rescue at:</strong>
+  <%= @investment.rescue_at %>
+</p>
+
+<p>
+  <strong>Invested amount:</strong>
+  <%= @investment.invested_amount %>
+</p>
+
+<p>
+  <strong>Estimated rescue:</strong>
+  <%= @investment.estimated_rescue %>
+</p>
+
+<%= link_to 'Edit', edit_investment_path(@investment) %> |
+<%= link_to 'Back', investments_path %>
